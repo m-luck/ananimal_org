@@ -1,1 +1,9 @@
+*/node_modules/
+*.secret
+*.ignore
+db.sql*
+*/__pycache__/
 node_modules
+*.lock
+*pyc
+*/migrations/*.py
