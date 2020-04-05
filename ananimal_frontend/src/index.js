@@ -14,8 +14,6 @@ export let store = createStore(
 )
 
 ReactDOM.render(
-    <Provider store={store}>
-        <StyledApp />
-     </Provider>,
+    <StyledApp />,
     document.getElementById('root')
 )
