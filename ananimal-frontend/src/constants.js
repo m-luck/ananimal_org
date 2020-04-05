@@ -8,9 +8,10 @@ export const colors = {
     nightOrange: '#ffcb99',
     nightBlue: '#336667',
     softWhite: '#F6F6F6',
+    brightBlack: '#2E2E2E'
 }
 
-export const API_SUBMISSION_URL = "https://overflowstorage-0ba2.restdb.io/rest/submissions"
+export const API_SUBMISSION_URL = "https://ananimal-9e22.restdb.io/rest/mailinglist"
 export const API_SUBMISSION_BACKUP_URL = "http://overflowstorage-0ba2.restdb.io/rest/submissionBackups"
 
 // Redux Form Keys
@@ -22,127 +23,38 @@ export const DEFAULT_MIN_PLUS = 4
 export const DEFAULT_MID = 16
 export const DEFAULT_MAX_MINUS = 30
 export const DEFAULT_MAX = 32
-const generate_config = (min, max, fresh, marks, item, sectionTitle, slug) =>
-        ({ min, max, fresh, marks, item, sectionTitle, slug })
-const BREATHING_CONFIG = generate_config(DEFAULT_MIN, DEFAULT_MAX,
-        DEFAULT_MIN,
-        [
-            [DEFAULT_MIN, "Normal"],
-            [DEFAULT_MID, "Difficult"],
-            [DEFAULT_MAX_MINUS, "Incapacitated"],
-        ],
-        'Breathing',
-    )
-const COUGH_CONFIG = generate_config(DEFAULT_MIN, DEFAULT_MAX,
-        DEFAULT_MIN,
-        [
-            [DEFAULT_MIN, "None"],
-            [DEFAULT_MIN_PLUS, "Once Per Hour"],
-            [DEFAULT_MID, "Once Per Half Hour"],
-            [DEFAULT_MAX_MINUS, "Once+ Per Minute"],
-        ],
-        'Coughing',
-    )
-const HEADACHE_CONFIG = generate_config(DEFAULT_MIN, DEFAULT_MAX,
-        DEFAULT_MIN,
-        [
-            [DEFAULT_MIN, "None"],
-            [DEFAULT_MIN_PLUS, "Small"],
-            [DEFAULT_MID, "Average"],
-            [DEFAULT_MAX_MINUS, "Above Average"],
-        ],
-        'Headache'
-    )
-const FATIGUE_CONFIG = generate_config(DEFAULT_MIN, DEFAULT_MAX,
-        DEFAULT_MIN,
-        [
-            [DEFAULT_MIN, "Normal"],
-            [DEFAULT_MAX_MINUS, "Incapacitated"],
-        ],
-        'Fatigue'
-    )
-const FEVER_CONFIG = generate_config(DEFAULT_MIN, DEFAULT_MAX,
-        DEFAULT_MIN_PLUS,
-        [
-            [DEFAULT_MIN, "Hypo- (<98.6)"],
-            [DEFAULT_MIN_PLUS, "None (~98.6)"],
-            [DEFAULT_MID, "High (~101)"],
-            [DEFAULT_MAX_MINUS, "Very High (105+)"],
-        ],
-        'Fever'
-    )
-const NOSE_CONFIG = generate_config(DEFAULT_MIN, DEFAULT_MAX,
-        DEFAULT_MIN,
-        [
-            [DEFAULT_MIN, "Normal"],
-            [DEFAULT_MIN_PLUS, "Small Sniffling"],
-            [DEFAULT_MID, "Very Runny"],
-            [DEFAULT_MAX_MINUS, "Nasally Blocked"],
-        ],
-        'Nose'
-    )
-const THROAT_CONFIG = generate_config(DEFAULT_MIN, DEFAULT_MAX,
-        DEFAULT_MIN,
-        [
-            [DEFAULT_MIN, "Normal"],
-            [DEFAULT_MID, "Sore"],
-            [DEFAULT_MAX_MINUS, "Incapacitated"],
-        ],
-        'Throat'
-    )
-const VISITS_CONFIG = generate_config(0, 6,
-        0,
-        [ // This one is categorical
-            [0, "Not Planning To"],
-            [1, "Not Yet"],
-            [2, "Called without Success"],
-            [3, "Showed up without Success"],
-            [4, "Awaiting Diagnosis Results"],
-            [5, "Diagnosed, Deemed Fine"],
-            [6, "Diagnosed, Deemed Ill"],
-        ],
-        '',
-        'Hospital Visits',
-        'visits'
-    )
-const WORRY_CONFIG = generate_config(DEFAULT_MIN, DEFAULT_MAX,
-        DEFAULT_MIN,
-        [
-            [DEFAULT_MIN, "Relaxed"],
-            [DEFAULT_MID, "Anxious"],
-            [DEFAULT_MAX, "Fearful"],
-        ],
-        '',
-        'Worry',
-        'worry'
 
-    )
-const BELIEF_CONFIG = generate_config(DEFAULT_MIN, DEFAULT_MAX,
-        DEFAULT_MIN,
-        [
-            [DEFAULT_MIN+1, "100% No"],
-            [DEFAULT_MAX-1, "100% Yes"],
-        ],
-        '',
-        'Do I individually believe I have COVID-19?',
-        'Belief'
-    )
-export const sliderConfigs = [
-    BREATHING_CONFIG,
-    COUGH_CONFIG,
-    HEADACHE_CONFIG,
-    FATIGUE_CONFIG,
-    FEVER_CONFIG,
-    NOSE_CONFIG,
-    THROAT_CONFIG,
-    VISITS_CONFIG,
-    WORRY_CONFIG,
-    BELIEF_CONFIG,
-]
-export const sliderSectionListFormInitialValues = () => {
-    let initialValues = {}
-    sliderConfigs.forEach(config =>
-        initialValues[selectors.getReduxFormFieldName(config)] = config.fresh
-    )
-    return initialValues
+export const explanations = {
+    ls: {
+        mission: "Provide positive housing and life experiences that only a certain mindset can offer.",
+        description: "Create a safe and unbeatable environment for humans to create memories, whether it be rent, residency purchase, state-of-the-art venues, or vacation spaces, including a seamless consideration toward care, access, and transaction. (Read: The UChicago theory of property.) Timescale: ~1 to ~10 years."
+    },
+    aavg: {
+        mission: "Make good corn better => Extend to blissful food experiences (w/ LS).",
+        description: "Funnel hard science, intelligent parallelized hardware, and computational rigor to generate unbeatable rates of delicious and abundant food for all, over a timespan of both ~5 and ~1000 years. We're hiring our first farmhand! PhD suggested."
+    },
+    amax: {
+        mission: "Maximize witness-time to the self-defined beauty of life.",
+        description: "Engage in a time-sensitive, 24/7 automated assembly loop of open hard sciences (neuroscience, computer science, physics, biology), realistic thought (law, politics), and self-sustaining practices to maximize the ability for memories and life experiences to preserve and extend much beyond the gradual or abrupt decay which usually befalls them. Timescale: ~10 to ~1mil years."
+    },
+    imm: {
+        mission: "Make cool, expansive, unnervingly immersive, and beautiful worlds in-game or in-story.",
+        description: "Using rigorous neuroscience, biology, behavioral economics, and computer simulations, generate read-and-write (or read-only) experiences that offer a safe space for breadth of imaginative experience."
+    },
+    lax: {
+        mission: "-",
+        description: "Generate thoughtful, evocative and elegant art work that can be displayed on a moving body, as well as heavy/delicate pieces that can reside in lifespaces. (To be randomly sold in bidding model, sometimes no-profit.)"
+    },
+    amin: {
+        mission: "Minimize the amount of unproductive net suffering that manifests as homelessness and mental hardship.",
+        description: "Using rigorous neuroscience, biology, behavioral economics, and computer simulations, inject strategic experiences and movements into the organic structure of society to aggressively net lift those at bedrock levels of psychological and socioeconomic struggle above a concrete, predefined baseline of opportunity. Timeline ~10 to ~50 years."
+    },
+    uxu: {
+        mission: "Fast profitable merchandise to fund ANML ventures.",
+        description: "High volume, fun and popular T-Shirts that sustain as a business to neutrally capitalize on a common need for identity and entertainment."
+    },
+    blnc: {
+        mission: "The most significant consulting firm for hardworking, early-generation Technologists.",
+        description: ""
+    },
 }

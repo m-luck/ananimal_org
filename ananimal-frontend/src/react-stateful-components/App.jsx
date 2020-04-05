@@ -32,8 +32,9 @@ class App extends React.Component {
 }
 
 const StyledApp = styled(App)`
-    font-family: sans-serif;
-    background-image: linear-gradient(to bottom, ${colors.blue} 0%, ${colors.pink} 60%, ${colors.orange} 100%);
+    font-family: monospace;
+    font-size: 1.4em;
+    background-image: linear-gradient(to bottom, ${colors.nightBlue} 0%, ${colors.pink} 60%, ${colors.orange} 100%);
     margin: 0;
     padding: 0;
 `

@@ -60,22 +60,29 @@ export const StyledSimpleSlider = styled(SimpleSliderWithMUITheme)`
 `
 
 export const StyledSliderSection = styled(SliderSection)`
-    h3 { color: ${colors.green}}
+    color: ${colors.softWhite};
+    .acronym {
+        background: linear-gradient(12deg, ${colors.softWhite} 0%, ${colors.pink} 30%, ${colors.softWhite} 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
     margin: 0px 2em 3em 2em;
+    padding: 0 0 5vh 16vw;
     border: dashed;
-    border-color: ${colors.green};
-    border-width: 1px 0px 0px 0px;
+    border-color: ${colors.pink};
+    border-width: 0px 0px 1px 0px;
 `
 
 export const StyledInput = styled(FormInput)`
     input {
         display: block;
         margin: 2vh auto 2vh auto;
-        border-radius: 20px;
+        border-radius: 2px;
         width: 40vw;
         height: 3vw;
         padding: 0.2em 1em 0.2em 1em;
         font-size: 1.0em;
+        font-family: monospace;
         border: none;
         outline: none;
         opacity: 0.7;
@@ -86,11 +93,12 @@ export const StyledTextArea = styled(FormTextArea)`
     textarea {
         display: block;
         margin: 2vh auto 6vh auto;
-        border-radius: 20px;
+        border-radius: 2px;
         width: 40vw;
         height: 5vw;
         padding: 2em 1em 0.2em 1em;
-        font-size: 0.9em;
+        font-size: 1.0em;
+        font-family: monospace;
         border: none;
         outline: none;
         opacity: 0.7;
@@ -102,13 +110,14 @@ export const StyledTextArea = styled(FormTextArea)`
 export const StyledButton = styled.button`
     width: 20vw;
     height: 7vw;
-    background-image: linear-gradient(45deg, ${colors.orange} 0%, ${colors.pink} 30%, ${colors.blue} 100%);
+    background-image: linear-gradient(45deg, ${colors.nightBlue} 0%, ${colors.brightBlack} 30%, ${colors.blue} 100%);
     background-size: 30vw;
     border: none;
     border-radius: 3px;
     transition: background 0.5s ease-out;
     font-size: 20px;
-    color: ${colors.nightBlue};
+    font-family: monospace;
+    color: ${colors.softWhite};
     cursor: pointer;
     :hover {
         background-position: -10vw;

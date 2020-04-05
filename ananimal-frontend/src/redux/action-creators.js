@@ -22,6 +22,8 @@ export const onSubmitSliderSectionListForm = (values, dispatch, props) => {
 
     if (!('email' in values)) { values['email'] = '(no email)'}
 
+    console.log(values)
+
     axios({
         "async": true,
         "crossDomain": true,
@@ -29,14 +31,14 @@ export const onSubmitSliderSectionListForm = (values, dispatch, props) => {
         "method": "POST",
         "headers": {
           "content-type": "application/json",
-          "x-apikey": "5e78590ff96f9f072a0b0830",
+          "x-apikey": "5e897694111788414066c689",
           "cache-control": "no-cache"
         },
         "processData": false,
         "data": { ...values }
     })
     .then(res =>
-        null
+        console.log(res)
     )
 
     // axios
