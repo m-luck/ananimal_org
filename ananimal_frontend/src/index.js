@@ -10,12 +10,12 @@ import { createStore } from 'redux'
 
 export let store = createStore(
     appReducer,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 
 ReactDOM.render(
-    // <Provider store={store}>
+    <Provider store={store}>
         <StyledApp />
-    // </Provider>,
+     </Provider>,
     document.getElementById('root')
 )
