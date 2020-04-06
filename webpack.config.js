@@ -1,6 +1,6 @@
 const path = require('path')
 module.exports = {
-    entry: './frontend/src/index.js',
+    entry: './ananimal-frontend/src/index.js',
     output: {
         path: path.resolve('dist'),
         filename: 'bundle.js'
